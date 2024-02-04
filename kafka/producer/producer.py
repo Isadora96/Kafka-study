@@ -24,7 +24,7 @@ class ProducerAdapter:
             self._log.error('ERROR: Message failed delivery: {}'.format(err))
         else:
             self._log.info("Produced event to topic {topic}: key = {key:12} value = {value:12}".format(
-                topic=msg.topic(), key=msg.key().decode('utf-8'), value=msg.value().decode('utf-8')))
+                topic=msg.topic(), key=msg.key().decode('utf-8') if msg.key() else '', value=msg.value().decode('utf-8')))
     
     def _connect(self):
         
@@ -46,9 +46,10 @@ class ProducerAdapter:
         topic = "demo_python"
         msg_value = 'Hello from kafka-study'
         msg_key = '1'
-    
-        self.producer.produce(topic, msg_value, msg_key, callback=self.callback)
         
-        # Block until the messages are sent.
-        self.producer.poll(10000)
-        self.producer.flush()
+        for n in range(5):
+            self.producer.produce(topic, f'{msg_value}-{str(n)}', str(n), callback=self.callback)
+            
+            # Block until the messages are sent.
+            self.producer.poll(10000)
+            self.producer.flush()
