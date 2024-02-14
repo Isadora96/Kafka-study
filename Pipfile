@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask-sse = "==1.0.0"
+confluent-kafka = "==2.3.0"
+flask = "*"
+requests = "*"
+opensearch-py = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
