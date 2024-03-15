@@ -2,6 +2,7 @@
 
 ## Resources 
 
+- [Apache Kafka Series - Learn Apache Kafka for Beginners v3](https://www.udemy.com/course/apache-kafka/?couponCode=2021PM25)
 - [Confluent Kafka Github](https://github.com/confluentinc/confluent-kafka-python)
 - [Confluent Kafka python](https://developer.confluent.io/get-started/python#introduction)
 - [Confluent Kafka python example](https://pandeyshikha075.medium.com/getting-started-with-confluent-kafka-in-python-579b708801e7)
